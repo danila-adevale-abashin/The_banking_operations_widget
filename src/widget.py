@@ -1,3 +1,5 @@
+from masks import get_mask_account, get_mask_card_number
+
 user_account_card = input("Введите информацио о карте/счете и укажите её/его номер: ")
 
 
@@ -17,10 +19,10 @@ def mask_account_card(account_card: str) -> str:
             is_not_number = is_not_number + symbol
     # Если длина строки номера - 16, маскируем как карту
     if len(is_number) == 16:
-        return f"{is_not_number}{is_number[:4]} {is_number[4:6]}** **** {is_number[12:16]}"
+        return f"{is_not_number}{get_mask_card_number(is_number)}"
     # Если длина номера - 20, маскируем как счет
     elif len(is_number) == 20:
-        return f"{is_not_number}**{is_number[-4:]}"
+        return f"{is_not_number}{get_mask_account(is_number)}"
     else:
         raise ValueError("Номер карты должен содержать 16 цифр. Номер счета - 20 цифр")
 

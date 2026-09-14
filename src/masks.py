@@ -2,9 +2,6 @@
 # который показывает несколько последних успешных банковских операций клиента.
 # Нам доверили реализовать этот проект, который на бэкенде будет готовить данные для отображения в новом виджете.
 
-user_card_number = input("Введите номер Вашей банковской карты: ")
-user_account = input("\nВведите номер Вашего банковского счета: ")
-
 
 def get_mask_card_number(user_card_number: str) -> str:
     """Эта функция принимает номер банковской карты и возвращает его в замаскированном виде"""
@@ -12,9 +9,6 @@ def get_mask_card_number(user_card_number: str) -> str:
         raise ValueError("Номер карты должен содержать 16 цифр")
     mask_card_number = f"{user_card_number[:4]} {user_card_number[4:6]}** **** {user_card_number[12:16]}"
     return mask_card_number
-
-
-print(f"\nВаша банковская карта: {get_mask_card_number(user_card_number)}")
 
 
 def get_mask_account(user_account: str) -> str:
@@ -25,4 +19,10 @@ def get_mask_account(user_account: str) -> str:
     return mask_account
 
 
-print(f"\nВаш банковский счет: {get_mask_account(user_account)}")
+if __name__ == "__main__":
+    user_card_number = input("Введите номер Вашей банковской карты: ")
+    user_account = input("\nВведите номер Вашего банковского счета: ")
+
+    print(f"\nВаша банковская карта: {get_mask_card_number(user_card_number)}")
+
+    print(f"\nВаш банковский счет: {get_mask_account(user_account)}")
