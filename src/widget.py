@@ -26,3 +26,15 @@ def mask_account_card(account_card: str) -> str:
 
 
 print(f"\n{mask_account_card(user_account_card)}")
+
+
+def get_date(date_info: str) -> str:
+    """
+    Функция принимает определенный формат даты, выводя дату в формате "ДД.ММ.ГГГГ"
+    :param date_info: Дата определенного формата
+    :return: Отредактированная дата
+    """
+    return f"{date_info[8:10]}.{date_info[5:7]}.{date_info[0:4]}"
+
+
+print(get_date("2024-03-11T02:26:18.671407"))
