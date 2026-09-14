@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from masks import get_mask_account, get_mask_card_number
 
 user_account_card = input("Введите информацио о карте/счете и укажите её/его номер: ")
@@ -36,7 +38,9 @@ def get_date(date_info: str) -> str:
     :param date_info: Дата определенного формата
     :return: Отредактированная дата
     """
-    return f"{date_info[8:10]}.{date_info[5:7]}.{date_info[0:4]}"
+    iso_date = datetime.fromisoformat(date_info)
+    result_date = iso_date.strftime("%d.%m.%Y")
+    return result_date
 
 
 print(get_date("2024-03-11T02:26:18.671407"))
