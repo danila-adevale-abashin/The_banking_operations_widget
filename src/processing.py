@@ -31,7 +31,7 @@ def sort_by_date(operations: list[dict], reverse: bool = True) -> list[dict]:
 if __name__ == "__main__":
 
     # Список для проверки
-    dictionary = [
+    client_operations = [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
         {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
@@ -39,11 +39,11 @@ if __name__ == "__main__":
     ]
 
     # Проверка функции со значением по умолчанию и с указанным значением
-    print(filter_by_state(dictionary))
+    print(filter_by_state(client_operations))
 
-    print(filter_by_state(dictionary, "CANCELED"))
+    print(filter_by_state(client_operations, "CANCELED"))
 
     # Проверка функции с сортировкой по умолчанию и с указанным направлением
-    print(sort_by_date(dictionary))
+    print(sort_by_date(client_operations))
 
-    print(sort_by_date(dictionary, False))
+    print(sort_by_date(client_operations, False))
