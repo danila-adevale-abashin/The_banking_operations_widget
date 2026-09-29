@@ -24,6 +24,37 @@ lint = [
     "isort (>=9.0.1,<10.0.0)",
     "mypy (>=2.3.1,<3.0.0)"
 ]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]
+
+[tool.pytest.ini_options]
+# Указывает pytest, что тесты лежат в папке tests
+testpaths = ["tests"]
+# Шаблон имён файлов с тестами
+python_files = ["test_*.py"]
+# Добавляет флаги, которые применяются ко всем запускам pytest
+addopts = [
+    "-ra",                        # Показывать краткую сводку по всем тестам
+    "--strict-markers",           # Ошибка при использовании неизвестных маркеров
+    "--cov=src",                  # Собирать покрытие ТОЛЬКО для папки src
+    "--cov-report=term-missing",  # Показывать строки, которые не покрыты тестами
+]
+
+[tool.coverage.run]
+# Указывает, какие файлы анализировать (только код в src)
+source = ["src"]
+# Учитывает ветвления if/else в покрытии
+branch = true
+
+[tool.coverage.report]
+# Исключает из отчёта строки, которые не нужно покрывать тестами
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
 
 [tool.black]
 line-length = 119
