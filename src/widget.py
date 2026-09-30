@@ -1,8 +1,6 @@
 from datetime import datetime
 
-from masks import get_mask_account, get_mask_card_number
-
-user_account_card = input("Введите информацио о карте/счете и укажите её/его номер: ")
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_card: str) -> str:
@@ -19,17 +17,15 @@ def mask_account_card(account_card: str) -> str:
             is_number = is_number + symbol
         else:
             is_not_number = is_not_number + symbol
+    info_about_number = is_not_number.translate(str.maketrans("", "", " "))
     # Если длина строки номера - 16, маскируем как карту
     if len(is_number) == 16:
-        return f"{is_not_number}{get_mask_card_number(is_number)}"
+        return f"{info_about_number} {get_mask_card_number(is_number)}".strip()
     # Если длина номера - 20, маскируем как счет
     elif len(is_number) == 20:
-        return f"{is_not_number}{get_mask_account(is_number)}"
+        return f"{info_about_number} {get_mask_account(is_number)}".strip()
     else:
         raise ValueError("Номер карты должен содержать 16 цифр. Номер счета - 20 цифр")
-
-
-print(f"\n{mask_account_card(user_account_card)}")
 
 
 def get_date(date_info: str) -> str:
@@ -43,4 +39,9 @@ def get_date(date_info: str) -> str:
     return result_date
 
 
-print(get_date("2024-03-11T02:26:18.671407"))
+if __name__ == "__main__":
+    user_account_card = input("Введите информацию о карте/счете и укажите её/его номер: ")
+
+    print(f"\n{mask_account_card(user_account_card)}")
+
+    print(get_date("2024-03-11T02:26:18.671407"))
