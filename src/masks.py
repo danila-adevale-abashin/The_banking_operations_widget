@@ -18,9 +18,12 @@ def get_mask_card_number(user_card_number: str) -> str:
 
 def get_mask_account(user_account: str) -> str:
     """Эта функция принимает номер банковского счета и возвращает номер в замаскированном виде"""
-    if len(user_account) != 20:
+    account = user_account.translate(str.maketrans('', '', ' -.'))
+    if len(account) != 20:
         raise ValueError("Номер счета должен содержать 20 цифр")
-    mask_account = f"**{user_account[-4:]}"
+    if not account.isdigit():
+        raise ValueError('Номер счета должен содержать только цифры')
+    mask_account = f"**{account[-4:]}"
     return mask_account
 
 
