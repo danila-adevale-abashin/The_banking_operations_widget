@@ -47,3 +47,5 @@ if __name__ == "__main__":
     print(sort_by_date(client_operations))
 
     print(sort_by_date(client_operations, False))
+
+    print(filter_by_state([{"id": 1, "state": "EXECUTED"}, {"id": 24651729, "state": "CANCELED"}]))
