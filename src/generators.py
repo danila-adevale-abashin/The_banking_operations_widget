@@ -1,7 +1,24 @@
-def filter_by_currency(transactions: list[dict], currency: str) -> list[dict]:
+from typing import Iterator
+
+
+def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict]:
+    """
+    :param transactions: Список словарей, содержащий информацию о транзакциях
+    :param currency: Параметр, определяющий фильтрацию по валюте
+    :return: Итератор транзакции по выбранной валюте
+    """
     for transaction in transactions:
         if transaction['operationAmount']['currency']['code'] == currency:
             yield transaction
+
+
+def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
+    """
+    :param transactions: Список словарей, содержащий информацию о транзакциях
+    :return: Итератор описания транзакции
+    """
+    for transaction in transactions:
+        yield transaction['description']
 
 
 if __name__ == '__main__':
@@ -115,5 +132,9 @@ if __name__ == '__main__':
 
     transaction_rub = filter_by_currency(transactions, 'RUB')
 
-    for i in range():
+    for i in range(2):
         print(next(transaction_rub))
+
+    descriptions = transaction_descriptions(transactions)
+    for _ in range(7):
+        print(next(descriptions))
