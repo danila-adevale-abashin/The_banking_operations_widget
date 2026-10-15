@@ -21,6 +21,19 @@ def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
         yield transaction['description']
 
 
+def card_number_generator(start: int, end: int) -> Iterator[str]:
+    """
+    Генерирует номера карт в формате XXXX XXXX XXXX XXXX
+    :param start: Начало генерации
+    :param end: Конец генерации
+    :return: Сгенерированные номера карт
+    """
+    for number in range(start, end + 1):
+        s = f'{number:016d}'
+        formatted = f'{s[:4]} {s[4:8]} {s[8:12]} {s[12:16]}'
+        yield formatted
+
+
 if __name__ == '__main__':
     transactions = [
         {
@@ -138,3 +151,6 @@ if __name__ == '__main__':
     descriptions = transaction_descriptions(transactions)
     for _ in range(7):
         print(next(descriptions))
+
+    for card_number in card_number_generator(1, 5):
+        print(card_number)
