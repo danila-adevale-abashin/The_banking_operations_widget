@@ -1,5 +1,7 @@
 from src.decorators import log
-@log('report.txt')
+
+
+@log("report.txt")
 def filter_by_state(operations: list[dict], state: str = "EXECUTED") -> list[dict]:
     """
     Функция принимает список словарей банковских операций, и фильтрует его,
@@ -17,7 +19,8 @@ def filter_by_state(operations: list[dict], state: str = "EXECUTED") -> list[dic
 
     return [item for item in operations if item["state"] == state]
 
-@log('report.txt')
+
+@log("report.txt")
 def sort_by_date(operations: list[dict], reverse: bool = True) -> list[dict]:
     """
     Функция принимает список словарей банковских операций, и фильтрует его,
