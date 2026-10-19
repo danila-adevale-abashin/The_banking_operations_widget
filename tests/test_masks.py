@@ -71,11 +71,13 @@ def test_exception_account(account):
 
 @pytest.fixture
 def card_num():
-    return ['1234567891234567', '1234 5678 9123 4568']
+    return ["1234567891234567", "1234 5678 9123 4568"]
+
 
 @pytest.fixture
 def card_num_masks():
-    return ['1234 56** **** 4567', '1234 56** **** 4568']
+    return ["1234 56** **** 4567", "1234 56** **** 4568"]
+
 
 def test_card(card_num, card_num_masks):
     for i, card in enumerate(card_num):

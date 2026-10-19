@@ -1,6 +1,9 @@
 from typing import Iterator
 
+from src.decorators import log
 
+
+@log("report.txt")
 def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict]:
     """
     :param transactions: Список словарей, содержащий информацию о транзакциях
@@ -8,19 +11,21 @@ def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict
     :return: Итератор транзакции по выбранной валюте
     """
     for transaction in transactions:
-        if transaction['operationAmount']['currency']['code'] == currency:
+        if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
 
 
+@log("report.txt")
 def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
     """
     :param transactions: Список словарей, содержащий информацию о транзакциях
     :return: Итератор описания транзакции
     """
     for transaction in transactions:
-        yield transaction['description']
+        yield transaction["description"]
 
 
+@log("report.txt")
 def card_number_generator(start: int, end: int) -> Iterator[str]:
     """
     Генерирует номера карт в формате XXXX XXXX XXXX XXXX
@@ -29,12 +34,12 @@ def card_number_generator(start: int, end: int) -> Iterator[str]:
     :return: Сгенерированные номера карт
     """
     for number in range(start, end + 1):
-        s = f'{number:016d}'
-        formatted = f'{s[:4]} {s[4:8]} {s[8:12]} {s[12:16]}'
+        s = f"{number:016d}"
+        formatted = f"{s[:4]} {s[4:8]} {s[8:12]} {s[12:16]}"
         yield formatted
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     transactions = [
         {
             "id": 939719570,
@@ -143,7 +148,7 @@ if __name__ == '__main__':
         },
     ]
 
-    transaction_rub = filter_by_currency(transactions, 'RUB')
+    transaction_rub = filter_by_currency(transactions, "RUB")
 
     for i in range(2):
         print(next(transaction_rub))
