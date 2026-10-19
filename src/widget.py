@@ -2,7 +2,9 @@ from datetime import datetime
 
 from src.masks import get_mask_account, get_mask_card_number
 
+from src.decorators import log
 
+@log('report.txt')
 def mask_account_card(account_card: str) -> str:
     """
     Функция принимает в себя информацию о карте/счете и маскирует, выдавая ту же информацию, но с маской
@@ -27,7 +29,7 @@ def mask_account_card(account_card: str) -> str:
     else:
         raise ValueError("Номер карты должен содержать 16 цифр. Номер счета - 20 цифр")
 
-
+@log('report.txt')
 def get_date(date_info: str) -> str:
     """
     Функция принимает определенный формат даты, выводя дату в формате "ДД.ММ.ГГГГ"

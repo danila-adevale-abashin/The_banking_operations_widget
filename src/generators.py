@@ -1,6 +1,7 @@
 from typing import Iterator
+from src.decorators import log
 
-
+@log('report.txt')
 def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict]:
     """
     :param transactions: Список словарей, содержащий информацию о транзакциях
@@ -11,7 +12,7 @@ def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict
         if transaction['operationAmount']['currency']['code'] == currency:
             yield transaction
 
-
+@log('report.txt')
 def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
     """
     :param transactions: Список словарей, содержащий информацию о транзакциях
@@ -20,7 +21,7 @@ def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
     for transaction in transactions:
         yield transaction['description']
 
-
+@log('report.txt')
 def card_number_generator(start: int, end: int) -> Iterator[str]:
     """
     Генерирует номера карт в формате XXXX XXXX XXXX XXXX

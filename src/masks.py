@@ -1,8 +1,11 @@
+from src.decorators import log
+
+
 # IT-отдел крупного банка делает новую фичу для личного кабинета клиента. Это виджет,
 # который показывает несколько последних успешных банковских операций клиента.
 # Нам доверили реализовать этот проект, который на бэкенде будет готовить данные для отображения в новом виджете.
 
-
+@log('report.txt')
 def get_mask_card_number(user_card_number: str) -> str:
     """Эта функция принимает номер банковской карты и возвращает его в замаскированном виде"""
     card_number = user_card_number.translate(str.maketrans("", "", " -."))
@@ -15,6 +18,7 @@ def get_mask_card_number(user_card_number: str) -> str:
     return mask_card_number
 
 
+@log('report.txt')
 def get_mask_account(user_account: str) -> str:
     """Эта функция принимает номер банковского счета и возвращает номер в замаскированном виде"""
     account = user_account.translate(str.maketrans("", "", " -."))
