@@ -34,7 +34,9 @@ pip install -r requirements.txt
 Тесты написаны на `pytest`. Установлены в группу `dev`.
 
 Запуск тестов:
-`poetry run pytest`
+```bash
+poetry run pytest
+```
 
 Запуск с покрытием:
 `poetry run pytest --cov=src --cov-report=term-missing`
