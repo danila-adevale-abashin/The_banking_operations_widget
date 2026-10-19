@@ -33,36 +33,3 @@ def log(filename=None):
         return wrapper
 
     return my_decorator
-
-
-if __name__ == "__main__":
-
-    @log()
-    def get_mask_card_number(user_card_number) -> str:
-        """Эта функция принимает номер банковской карты и возвращает его в замаскированном виде"""
-        card_number = user_card_number.translate(str.maketrans("", "", " -."))
-        if len(card_number) != 16:
-            raise ValueError("Номер карты должен содержать 16 цифр")
-        if not card_number.isdigit():
-            raise ValueError("Номер карты должен содержать только цифры")
-
-        mask_card_number = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[12:16]}"
-        return mask_card_number
-
-    print(get_mask_card_number(1234567891234567))
-
-    def test_log():
-        @log
-        def get_mask_card_number(user_card_number=1234567891234567) -> str:
-            """Эта функция принимает номер банковской карты и возвращает его в замаскированном виде"""
-            card_number = user_card_number.translate(str.maketrans("", "", " -."))
-            if len(card_number) != 16:
-                raise ValueError("Номер карты должен содержать 16 цифр")
-            if not card_number.isdigit():
-                raise ValueError("Номер карты должен содержать только цифры")
-
-            mask_card_number = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[12:16]}"
-            return mask_card_number
-
-        result = get_mask_card_number(1234567891234569)
-        assert result

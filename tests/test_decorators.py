@@ -14,7 +14,7 @@ def test_log_success_console(capsys):
 
     captured = capsys.readouterr()
     assert result == 3
-    assert captured.out == "add ok\n"
+    assert captured.out == "add ok\n\n"
     assert captured.err == ""
 
 
