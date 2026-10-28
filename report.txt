@@ -1,0 +1,390 @@
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError. Inputs: ('',), {}
+get_mask_card_number error: ValueError. Inputs: ('123549',), {}
+get_mask_card_number error: ValueError. Inputs: ('123456789012345',), {}
+get_mask_card_number error: ValueError. Inputs: ('12345678901234567',), {}
+get_mask_card_number error: ValueError. Inputs: ('123151498412106541984512631984211',), {}
+get_mask_card_number error: ValueError. Inputs: ('abcdefghijklmnop',), {}
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account error: ValueError. Inputs: ('',), {}
+get_mask_account error: ValueError. Inputs: ('123549',), {}
+get_mask_account error: ValueError. Inputs: ('1234567891234567891',), {}
+get_mask_account error: ValueError. Inputs: ('123456789123056789123',), {}
+get_mask_account error: ValueError. Inputs: ('123151498412106541984512631456984211',), {}
+get_mask_account error: ValueError. Inputs: ('asdfghsdfsfsdffffjkl',), {}
+get_mask_card_number ok
+get_mask_card_number ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date error: KeyError. Inputs: ([{'id': 1}],), {}
+sort_by_date error: KeyError. Inputs: ([{'id': 2, 'state': 'EXECUTED'}],), {}
+get_mask_card_number ok
+mask_account_card ok
+get_mask_card_number ok
+mask_account_card ok
+get_mask_account ok
+mask_account_card ok
+get_mask_account ok
+mask_account_card ok
+mask_account_card error: ValueError. Inputs: ('',), {}
+mask_account_card error: ValueError. Inputs: ('МИР',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 123',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 123456789123456',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 12345678912345678',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 1234567891234567891',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 123456789123456789123',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 123456789123456789128748941654689156165',), {}
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date error: ValueError. Inputs: ('',), {}
+get_date error: ValueError. Inputs: ('   ',), {}
+get_date error: ValueError. Inputs: ('not a date',), {}
+get_date error: ValueError. Inputs: ('2024/03/11',), {}
+get_date error: ValueError. Inputs: ('11.03.2024',), {}
+get_date error: ValueError. Inputs: ('2024-13-01',), {}
+get_date error: ValueError. Inputs: ('2024-02-30',), {}
+get_date error: ValueError. Inputs: ('2024-03',), {}
+get_date error: ValueError. Inputs: ('2024',), {}
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError. Inputs: ('',), {}
+get_mask_card_number error: ValueError. Inputs: ('123549',), {}
+get_mask_card_number error: ValueError. Inputs: ('123456789012345',), {}
+get_mask_card_number error: ValueError. Inputs: ('12345678901234567',), {}
+get_mask_card_number error: ValueError. Inputs: ('123151498412106541984512631984211',), {}
+get_mask_card_number error: ValueError. Inputs: ('abcdefghijklmnop',), {}
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account error: ValueError. Inputs: ('',), {}
+get_mask_account error: ValueError. Inputs: ('123549',), {}
+get_mask_account error: ValueError. Inputs: ('1234567891234567891',), {}
+get_mask_account error: ValueError. Inputs: ('123456789123056789123',), {}
+get_mask_account error: ValueError. Inputs: ('123151498412106541984512631456984211',), {}
+get_mask_account error: ValueError. Inputs: ('asdfghsdfsfsdffffjkl',), {}
+get_mask_card_number ok
+get_mask_card_number ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date error: KeyError. Inputs: ([{'id': 1}],), {}
+sort_by_date error: KeyError. Inputs: ([{'id': 2, 'state': 'EXECUTED'}],), {}
+get_mask_card_number ok
+mask_account_card ok
+get_mask_card_number ok
+mask_account_card ok
+get_mask_account ok
+mask_account_card ok
+get_mask_account ok
+mask_account_card ok
+mask_account_card error: ValueError. Inputs: ('',), {}
+mask_account_card error: ValueError. Inputs: ('МИР',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 123',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 123456789123456',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 12345678912345678',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 1234567891234567891',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 123456789123456789123',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 123456789123456789128748941654689156165',), {}
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date error: ValueError. Inputs: ('',), {}
+get_date error: ValueError. Inputs: ('   ',), {}
+get_date error: ValueError. Inputs: ('not a date',), {}
+get_date error: ValueError. Inputs: ('2024/03/11',), {}
+get_date error: ValueError. Inputs: ('11.03.2024',), {}
+get_date error: ValueError. Inputs: ('2024-13-01',), {}
+get_date error: ValueError. Inputs: ('2024-02-30',), {}
+get_date error: ValueError. Inputs: ('2024-03',), {}
+get_date error: ValueError. Inputs: ('2024',), {}
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+filter_by_currency ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+transaction_descriptions ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+card_number_generator ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError. Inputs: ('',), {}
+get_mask_card_number error: ValueError. Inputs: ('123549',), {}
+get_mask_card_number error: ValueError. Inputs: ('123456789012345',), {}
+get_mask_card_number error: ValueError. Inputs: ('12345678901234567',), {}
+get_mask_card_number error: ValueError. Inputs: ('123151498412106541984512631984211',), {}
+get_mask_card_number error: ValueError. Inputs: ('abcdefghijklmnop',), {}
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account error: ValueError. Inputs: ('',), {}
+get_mask_account error: ValueError. Inputs: ('123549',), {}
+get_mask_account error: ValueError. Inputs: ('1234567891234567891',), {}
+get_mask_account error: ValueError. Inputs: ('123456789123056789123',), {}
+get_mask_account error: ValueError. Inputs: ('123151498412106541984512631456984211',), {}
+get_mask_account error: ValueError. Inputs: ('asdfghsdfsfsdffffjkl',), {}
+get_mask_card_number ok
+get_mask_card_number ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date ok
+sort_by_date error: KeyError. Inputs: ([{'id': 1}],), {}
+sort_by_date error: KeyError. Inputs: ([{'id': 2, 'state': 'EXECUTED'}],), {}
+get_mask_card_number ok
+mask_account_card ok
+get_mask_card_number ok
+mask_account_card ok
+get_mask_account ok
+mask_account_card ok
+get_mask_account ok
+mask_account_card ok
+mask_account_card error: ValueError. Inputs: ('',), {}
+mask_account_card error: ValueError. Inputs: ('МИР',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 123',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 123456789123456',), {}
+mask_account_card error: ValueError. Inputs: ('VisaCard 12345678912345678',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 1234567891234567891',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 123456789123456789123',), {}
+mask_account_card error: ValueError. Inputs: ('MasterCard 123456789123456789128748941654689156165',), {}
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date error: ValueError. Inputs: ('',), {}
+get_date error: ValueError. Inputs: ('   ',), {}
+get_date error: ValueError. Inputs: ('not a date',), {}
+get_date error: ValueError. Inputs: ('2024/03/11',), {}
+get_date error: ValueError. Inputs: ('11.03.2024',), {}
+get_date error: ValueError. Inputs: ('2024-13-01',), {}
+get_date error: ValueError. Inputs: ('2024-02-30',), {}
+get_date error: ValueError. Inputs: ('2024-03',), {}
+get_date error: ValueError. Inputs: ('2024',), {}
