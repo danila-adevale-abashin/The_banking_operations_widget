@@ -1,37 +1,23 @@
+from unittest.mock import Mock, patch
+
 import pytest
-from unittest.mock import patch, Mock
 
 from src.external_api import get_transaction_amount
 
 
 @pytest.fixture
 def usd_transaction():
-    return {
-        "operationAmount": {
-            "amount": "100.0",
-            "currency": {"code": "USD"}
-        }
-    }
+    return {"operationAmount": {"amount": "100.0", "currency": {"code": "USD"}}}
 
 
 @pytest.fixture
 def eur_transaction():
-    return {
-        "operationAmount": {
-            "amount": "100.0",
-            "currency": {"code": "EUR"}
-        }
-    }
+    return {"operationAmount": {"amount": "100.0", "currency": {"code": "EUR"}}}
 
 
 @pytest.fixture
 def rub_transaction():
-    return {
-        "operationAmount": {
-            "amount": "1000.0",
-            "currency": {"code": "RUB"}
-        }
-    }
+    return {"operationAmount": {"amount": "1000.0", "currency": {"code": "RUB"}}}
 
 
 # 1. ТЕСТ ДЛЯ USD (успешный)

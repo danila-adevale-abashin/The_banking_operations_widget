@@ -1,0 +1,3 @@
+get_mask_card_number ok
+get_mask_account ok
+get_mask_card_number error: ValueError. Inputs: ('1',), {}
