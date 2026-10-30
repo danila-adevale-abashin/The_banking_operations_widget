@@ -1,19 +1,17 @@
 import json
+
 import pytest
 
 from src.utils import get_operation_transactions
 
-
 # --- ФИКСТУРЫ ДЛЯ СОЗДАНИЯ ВРЕМЕННЫХ ФАЙЛОВ ---
+
 
 @pytest.fixture
 def valid_json_file(tmp_path):
     """Создает временный валидный JSON-файл."""
     file = tmp_path / "valid.json"
-    data = [
-        {"id": 1, "amount": "100.0"},
-        {"id": 2, "amount": "200.0"}
-    ]
+    data = [{"id": 1, "amount": "100.0"}, {"id": 2, "amount": "200.0"}]
     file.write_text(json.dumps(data), encoding="utf-8")
     return str(file)
 
@@ -43,6 +41,7 @@ def broken_json_file(tmp_path):
 
 
 # --- ТЕСТЫ ---
+
 
 def test_get_operation_transactions_valid(valid_json_file):
     """Тест: читает нормальный список транзакций."""
