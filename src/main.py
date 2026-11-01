@@ -1,7 +1,7 @@
 import json
 
 from src.file_readers import get_transactions_from_csv, get_transactions_from_excel
-from src.processing import filter_by_state, process_bank_search, sort_by_date
+from src.processing import filter_by_state, process_bank_search, process_bank_operations, sort_by_date
 from src.utils import get_operation_transactions
 from src.widget import mask_account_card
 
@@ -80,7 +80,7 @@ def main():
     for t in transactions:
         date = t["date"][:10]
         description = t["description"]
-        amount = t.get("operationAmount", {}).get("amount", "0")
+        amount = t.get("operationAmount", {}).get("amount", 0)
         currency = t.get("operationAmount", {}).get("currency", {}).get("name", "руб.")
         from_account = t.get("from", "")
         to_account = t.get("to", "")
@@ -99,6 +99,16 @@ def main():
 
         print(f"Сумма: {amount} {currency}")
 
+        # Подсчет по категориям
+        categories = list({t.get("description", "") for t in transactions if t.get("description")})
+
+        # Считаем статистику по этим категориям
+        stats = process_bank_operations(transactions, categories)
+
+        print("\nСтатистика по категориям:")
+        # Сортируем по убыванию количества, чтобы самое частое было сверху
+        for category, count in sorted(stats.items(), key=lambda x: x[1], reverse=True):
+            print(f"{category}: {count} операций")
 
 if __name__ == "__main__":
     main()
