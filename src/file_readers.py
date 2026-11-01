@@ -17,8 +17,25 @@ def get_transactions_from_csv(file_path: str) -> list[dict]:
         # Читаем CSV
         df = pd.read_csv(file_path, sep=";")
         df = df.fillna("")
-        # Превращаем таблицу в список словарей
-        return df.to_dict(orient="records")
+
+        transactions = []
+        for _, row in df.iterrows():
+            transactions.append({
+                'id': row['id'],
+                'state': row['state'],
+                'date': row['date'],
+                'operationAmount': {
+                    'amount': str(row['amount']),
+                    'currency': {
+                        'name': row['currency_name'],
+                        'code': row['currency_code'],
+                    },
+                },
+                'from': row['from'],
+                'to': row['to'],
+                'description': row['description'],
+            })
+        return transactions
     except Exception as e:
         logger.error(f"Ошибка при чтении CSV файла: {e}")
         return []
@@ -29,16 +46,28 @@ def get_transactions_from_excel(file_path: str) -> list[dict]:
     logger.info(f"Чтение данных из Excel: {file_path}")
 
     try:
-        # Читаем Excel (библиотека openpyxl, не как было в видосе)
+        # Читаем Excel
         df = pd.read_excel(file_path)
         df = df.fillna("")
-        # Превращаем таблицу в список словарей
-        return df.to_dict(orient="records")
+
+        transactions = []
+        for _, row in df.iterrows():
+            transactions.append({
+                'id': row['id'],
+                'state': row['state'],
+                'date': row['date'],
+                'operationAmount': {
+                    'amount': str(row['amount']),
+                    'currency': {
+                        'name': row['currency_name'],
+                        'code': row['currency_code'],
+                    },
+                },
+                'from': row['from'],
+                'to': row['to'],
+                'description': row['description'],
+            })
+        return transactions
     except Exception as e:
         logger.error(f"Ошибка при чтении Excel файла: {e}")
         return []
-
-
-if __name__ == "__main__":
-    print(get_transactions_from_csv("data/transactions.csv")[:2])
-    print(get_transactions_from_excel("data/transactions_excel.xlsx")[:2])
