@@ -24,7 +24,7 @@ def test_get_transactions_from_csv_success(mock_read_csv):
     assert result[0]["id"] == 1
     assert result[1]["currency"] == "USD"
 
-    mock_read_csv.assert_called_once_with("fake_path.csv")
+    mock_read_csv.assert_called_once_with("fake_path.csv", sep=';')
 
 
 @patch("src.file_readers.pd.read_csv")
