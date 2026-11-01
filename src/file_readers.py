@@ -15,7 +15,8 @@ def get_transactions_from_csv(file_path: str) -> list[dict]:
 
     try:
         # Читаем CSV
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, sep=";")
+        df = df.fillna("")
         # Превращаем таблицу в список словарей
         return df.to_dict(orient="records")
     except Exception as e:
@@ -30,6 +31,7 @@ def get_transactions_from_excel(file_path: str) -> list[dict]:
     try:
         # Читаем Excel (библиотека openpyxl, не как было в видосе)
         df = pd.read_excel(file_path)
+        df = df.fillna("")
         # Превращаем таблицу в список словарей
         return df.to_dict(orient="records")
     except Exception as e:
