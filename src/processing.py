@@ -1,3 +1,7 @@
+import collections
+import re
+from collections import Counter
+
 from src.decorators import log
 
 
@@ -17,7 +21,7 @@ def filter_by_state(operations: list[dict], state: str = "EXECUTED") -> list[dic
     #         result.append(item)
     # return result
 
-    return [item for item in operations if item["state"] == state]
+    return [item for item in operations if item.get("state") == state]
 
 
 @log("report.txt")
@@ -31,6 +35,18 @@ def sort_by_date(operations: list[dict], reverse: bool = True) -> list[dict]:
     """
 
     return sorted(operations, key=lambda item: item["date"], reverse=reverse)
+
+
+def process_bank_search(data: list[dict], search: str) -> list[dict]:
+    """Ищет транзакции, где в описании есть строка search."""
+    pattern = re.compile(re.escape(search), re.I)
+    return [t for t in data if pattern.search(t.get("description", ""))]
+
+
+def process_bank_operations(data: list[dict], categories: list) -> dict:
+    """Считает количество операций по всем категориям"""
+    descriptions = collections.Counter(t.get("description", "") for t in data)
+    return {cat: descriptions.get(cat, 0) for cat in categories}
 
 
 if __name__ == "__main__":

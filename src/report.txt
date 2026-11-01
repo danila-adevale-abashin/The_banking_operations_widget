@@ -1,3 +1,15 @@
 get_mask_card_number ok
 get_mask_account ok
 get_mask_card_number error: ValueError. Inputs: ('1',), {}
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+sort_by_date ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+sort_by_date ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
